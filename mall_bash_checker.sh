@@ -19,25 +19,25 @@ downloadleak() { # Download the file with leaks if it doesn't exist locally.
 }
 
 convertandcheck() {
-# Convert email to `sha256sum` and drop it inside a variable $emailsum.
-emailsum=$(echo -n "$email" | sha256sum | awk '{print $1}')
+	# Convert email to `sha256sum` and drop it inside a variable $emailsum.
+	emailsum=$(echo -n "$email" | sha256sum | awk '{print $1}')
 
-# Grep hashed email address against $leakfile.
-grep "$emailsum" < $leakfile >/dev/null && echo "$email: Leaked!" && status="Leaked!" || echo "$email: Safe!" && status="Safe!"
+	# Grep hashed email address against $leakfile.
+	grep "$emailsum" < $leakfile >/dev/null && echo "$email: Leaked!" && status="Leaked!" || echo "$email: Safe!" && status="Safe!"
 }
 
 emaillist() {
-[ -z "$emaillist" ] && printf "$0: No file has been selected.\\n" && exit
-! [ -f "$emaillist" ] && printf "$0: This file doesn't exist.\\n" && exit
+	[ -z "$emaillist" ] && printf "$0: No file has been selected.\\n" && exit
+	! [ -f "$emaillist" ] && printf "$0: This file doesn't exist.\\n" && exit
 
-echo "I have got $(wc -l < $emaillist) addresses."
-IFS=$'\n'
-for email in $(cat $emaillist); do
-	convertandcheck
-	echo "$email: $status" >> mall_output.txt
-done
-echo "Everything is done now! See output in \`mall_output.txt\`."
-exit
+	echo "I have got $(wc -l < $emaillist) addresses."
+	IFS=$'\n'
+	for email in $(cat $emaillist); do
+		convertandcheck
+		echo "$email: $status" >> mall_output.txt
+	done
+	echo "Everything is done now! See output in \`mall_output.txt\`."
+	exit
 }
 
 # Use `if` statement for the $leakfile. If the leakfile doesn't exist on your machine, then download it from $leaklink.
