@@ -40,10 +40,13 @@ cd mall_leak
 # faq
 Why?
 - Actually, I made this as a bash test capability. But thanks to this you can actually acknowledge yourself about your security.
+
 Please remove my password from this rheiwujrfgwedjklfbvdcsljfg *angry*.
 - The whole list only includes email addresses which are hashed by sha256, so you're safe.
+
 Should I change my password if I'm on that list?
 - I highly recommend that.
+
 Where did you get it?
 - From [this repository](https://github.com/Bystroushaak/mall_checker)
 
