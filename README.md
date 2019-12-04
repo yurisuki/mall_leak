@@ -25,7 +25,7 @@ You can execute this script really easily.
 
 curl way:
 ```shell
-curl puturlhere | bash -s -- --help
+curl https://raw.githubusercontent.com/yurisuki/mall_leak/master/mall_bash_checker.sh | bash -s -- --help
 ```
 
 ***
