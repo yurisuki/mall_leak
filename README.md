@@ -6,7 +6,7 @@
 
   ▓▓▓▓▓▓▓▓▓▓
  ░▓ about  ▓ This script will check if your e-mail is inside MALL.cz's leaked database.
- ░▓ author ▓ yurisuki <yurisuki@waifu.club>
+ ░▓ author ▓ yurisuki <adam@adamnvrtil.fun>
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░
 
